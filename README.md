@@ -6,6 +6,8 @@ and you get the markdown string.
 First, you need to add the dependency of this library to your project. Copy the following code snippet, and replace
 the "[version]" with the latest version (check the version of the latest package).
 
+<b>Keep in mind that you have to specify your GitHub credentials in your settings.xml config, if you are using maven!</b>
+
 Maven:
 ```
 <repositories>
@@ -29,6 +31,10 @@ Gradle:
 repositories {
     maven {
         url 'https://maven.pkg.github.com/Venterion/timestamp-util'
+        credentials {
+            username = "YOUR GITHUB USERNAME"
+            password = "YOUR GITHUB TOKEN"
+        }
     }
 }
 
