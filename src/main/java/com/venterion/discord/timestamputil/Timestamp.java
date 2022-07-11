@@ -38,13 +38,13 @@ public class Timestamp {
          * The long date format with short time displayed.
          * <p>e.g.: July 2, 2022 9:31 AM</p>
          */
-        LONG_DATE_WITH_TIME("f"),
+        SHORT_DATE_WITH_TIME("f"),
 
         /**
          * The full date with day of the week, date and short time.
          * <p>e.g.: Saturday, July 2, 2022 9:31 AM</p>
          */
-        LONG_DATE_FULL("F"),
+        LONG_DATE_WITH_TIME("F"),
 
         /**
          * The minutes passed or ahead of the current time.
@@ -67,6 +67,25 @@ public class Timestamp {
         public String getId() {
             return id;
         }
+    }
+
+    /**
+     * Gets the Discord markdown of the current time with the default format (short date with time).
+     *
+     * @return The Discord markdown of the current time with the default format.
+     */
+    public static String get() {
+        return get(System.currentTimeMillis() / 1000, Format.SHORT_DATE_WITH_TIME);
+    }
+
+    /**
+     * Gets the Discord markdown of the given time with the default format (short date with time).
+     *
+     * @param timestamp The timestamp.
+     * @return The Discord markdown of the given time with the default format.
+     */
+    public static String get(long timestamp) {
+        return get(timestamp, Format.SHORT_DATE_WITH_TIME);
     }
 
     /**
