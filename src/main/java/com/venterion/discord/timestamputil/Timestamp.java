@@ -74,7 +74,7 @@ public class Timestamp {
      *
      * @return The Discord markdown of the current time with the default format.
      */
-    public static String get() {
+    public static String now() {
         return get(System.currentTimeMillis() / 1000, Format.SHORT_DATE_WITH_TIME);
     }
 
